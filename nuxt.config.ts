@@ -4,7 +4,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxt/ui',
+    '@nuxt/ui', // don't add tailwindcss here, it's already added by @nuxt/ui
+    '@vueuse/nuxt',
   ],
   devtools: { enabled: true },
 
