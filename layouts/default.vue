@@ -1,10 +1,13 @@
 <template>
-  <div class="min-h-screen">
-    <UNavigationMenu
-      highlight
-      :items="items"
-      class="w-full justify-center data-[orientation=vertical]:w-48"
-    />
+  <div class="min-h-screen space-y-10">
+    <div class="flex justify-between items-center">
+      <UNavigationMenu
+        highlight
+        :items="items"
+        class="w-full justify-center data-[orientation=vertical]:w-48"
+      />
+      <UAvatar alt="N" />
+    </div>
     <NuxtPage />
   </div>
 </template>
@@ -23,9 +26,14 @@ const items = ref<NavigationMenuItem[]>([
     to: '/',
   },
   {
-    label: 'Pictures',
+    label: 'Hall of fame',
     icon: 'i-heroicons-camera',
     to: '/pictures',
+  },
+  {
+    label: 'Words',
+    icon: 'i-heroicons-document-text',
+    to: '/words',
   },
   {
     label: 'About',

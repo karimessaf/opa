@@ -1,7 +1,12 @@
 <template>
   <div class="h-full mt-20 flex flex-col items-center justify-center gap-20">
     <h1 class="text-2xl font-bold text-center">
-      Pictures we shared together 📷
+      Pictures we shared together <button
+        class="cursor-pointer"
+        @click="handleClickCamera"
+      >
+        📷
+      </button>
     </h1>
 
     <UCarousel
@@ -18,7 +23,6 @@
         dot: 'w-3 h-1',
       }"
       class="w-full max-w-4xl mx-auto"
-      @change="currentSlide = $event"
     >
       <div class="aspect-[4/3] w-full space-y-2">
         <img
@@ -35,7 +39,17 @@
 </template>
 
 <script setup lang="ts">
-const currentSlide = ref(0)
+import { useStorage } from '@vueuse/core'
+
+useHead({
+  title: 'Hall of fame',
+})
+
+definePageMeta({
+  middleware: ['auth'],
+})
+
+/* IMAGES */
 
 const eventNameByImageName = (name: string) => {
   const match = name.match(/([a-zA-Z]+)[-\d].*$/)?.[1]
@@ -45,6 +59,8 @@ const eventNameByImageName = (name: string) => {
   }
 
   return {
+    baking: 'Baking, 2025',
+    carnaval: 'Carnaval, 2025',
     lake: 'Meer van Genval, 2023',
     mav: 'Mise-au-vert, 2023',
     promo: 'Promo shoot, 2023',
@@ -53,4 +69,14 @@ const eventNameByImageName = (name: string) => {
 }
 
 const { data: items } = await useFetch<string[]>('/api/pictures')
+
+/* BACKGROUND IMAGE */
+
+const { incrementEasterEggsCount } = useEasterEggs()
+const hasSetBackgroundImage = useStorage('hasSetBackgroundImage', false)
+
+const handleClickCamera = () => {
+  hasSetBackgroundImage.value = !hasSetBackgroundImage.value
+  incrementEasterEggsCount('wallpaper')
+}
 </script>
