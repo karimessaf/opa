@@ -8,7 +8,7 @@
     >
       <div
         v-if="mounted && hasSetBackgroundImage"
-        class="absolute inset-0 backdrop-blur-sm bg-black/20"
+        class="absolute inset-0 backdrop-blur-lg bg-black/20"
       />
       <UContainer class="min-h-screen relative">
         <NuxtLayout>

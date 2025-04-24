@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full mt-20 flex flex-col items-center justify-center gap-20">
+  <div class="h-full flex flex-col items-center justify-center gap-20">
     <h1 class="text-2xl font-bold text-center">
       Pictures we shared together <button
         class="cursor-pointer"

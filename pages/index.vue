@@ -73,7 +73,7 @@
         <li>Crazy features implemented</li>
         <li>
           Still online playing <button
-            class="text-blue-100 cursor-pointer"
+            class="text-blue-200 cursor-pointer"
             @click="handleNGUIdle()"
           >
             NGU IDLE

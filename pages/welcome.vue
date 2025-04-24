@@ -65,7 +65,6 @@ import { POSSIBLE_NAMES, RESPONSE_BY_NAME } from '~/utils/constants'
 
 definePageMeta({
   layout: 'authentication',
-  // middleware: ['auth'],
 })
 
 /* NAME CHECK */

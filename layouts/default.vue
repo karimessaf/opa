@@ -8,7 +8,7 @@
       />
       <UAvatar alt="N" />
     </div>
-    <NuxtPage />
+    <NuxtPage class="pb-10" />
   </div>
 </template>
 

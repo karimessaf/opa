@@ -11,10 +11,19 @@ export const useEasterEggs = () => {
     if (!foundEasterEggs.value.includes(easterEggId)) {
       easterEggsCount.value++
       foundEasterEggs.value.push(easterEggId)
-      toast.add({
-        title: 'Easter egg found!',
-        description: `${easterEggsCount.value}/${TOTAL_EASTER_EGGS} 🥚 found so far`,
-      })
+
+      const isLastEasterEgg = easterEggsCount.value === TOTAL_EASTER_EGGS
+
+      const title = isLastEasterEgg ? 'That was the last one!' : 'Easter egg found!'
+
+      let description = `${easterEggsCount.value}/${TOTAL_EASTER_EGGS} 🥚 found so far`
+      if (isLastEasterEgg) {
+        description = 'Wow, you found all the easter eggs! 🎉 Did you have nothing better to do? Or did you cheat 🤨?'
+      }
+
+      const color = isLastEasterEgg ? 'success' : 'primary'
+
+      toast.add({ title, description, color })
     }
   }
 
