@@ -37,7 +37,7 @@
           description="Hey, just for the meme 😛"
         >
           <img
-            src="@/assets/images/disco-chef.jpeg"
+            src="/images/disco-chef.jpeg"
             alt="Disco chef"
             class="size-48 object-cover"
             @click="incrementEasterEggsCount('disco-chef')"
