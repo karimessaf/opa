@@ -7,6 +7,13 @@ export default defineNuxtConfig({
     '@nuxt/ui', // don't add tailwindcss here, it's already added by @nuxt/ui
     '@vueuse/nuxt',
   ],
+
+  imports: {
+    dirs: [
+      'utils/**',
+    ],
+  },
+
   devtools: { enabled: true },
 
   app: {
@@ -27,5 +34,9 @@ export default defineNuxtConfig({
     config: {
       stylistic: true,
     },
+  },
+
+  image: {
+    quality: 80,
   },
 })
