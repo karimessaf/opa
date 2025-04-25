@@ -8,22 +8,27 @@ export const useEasterEggs = () => {
   const foundEasterEggs = useStorage<string[]>('foundEasterEggs', [])
 
   const incrementEasterEggsCount = (easterEggId: string) => {
-    if (!foundEasterEggs.value.includes(easterEggId)) {
-      easterEggsCount.value++
-      foundEasterEggs.value.push(easterEggId)
+    if (foundEasterEggs.value.includes(easterEggId)) {
+      return
+    }
 
-      const isLastEasterEgg = easterEggsCount.value === TOTAL_EASTER_EGGS
+    easterEggsCount.value++
+    foundEasterEggs.value.push(easterEggId)
 
-      const title = isLastEasterEgg ? 'That was the last one!' : 'Easter egg found!'
+    const isLastEasterEgg = easterEggsCount.value === TOTAL_EASTER_EGGS
 
-      let description = `${easterEggsCount.value}/${TOTAL_EASTER_EGGS} 🥚 found so far`
-      if (isLastEasterEgg) {
-        description = 'Wow, you found all the easter eggs! 🎉 Did you have nothing better to do? Or did you cheat 🤨?'
-      }
-
-      const color = isLastEasterEgg ? 'success' : 'primary'
-
-      toast.add({ title, description, color })
+    if (!isLastEasterEgg) {
+      toast.add({
+        title: 'Easter egg found!',
+        description: `${easterEggsCount.value}/${TOTAL_EASTER_EGGS} 🥚 found so far`,
+      })
+    }
+    else {
+      toast.add({
+        title: 'That was the last one!',
+        description: 'Wow, you found all the easter eggs! 🎉 Did you have nothing better to do? Or did you cheat 🤨?',
+        color: 'success',
+      })
     }
   }
 
