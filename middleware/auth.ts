@@ -1,4 +1,3 @@
-// TODO: fix redirection
 import { useStorage } from '@vueuse/core'
 
 export default defineNuxtRouteMiddleware((to) => {
@@ -8,7 +7,6 @@ export default defineNuxtRouteMiddleware((to) => {
     return navigateTo('/')
   }
 
-  // If we're not authenticated and not on the welcome page, redirect to welcome
   if (!hasBeenAuthenticated.value && to.path !== '/welcome') {
     return navigateTo('/welcome')
   }
