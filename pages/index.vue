@@ -23,7 +23,7 @@
 
         <p>
           Stardate {{ dayjs().format('DD MMMM YYYY') }}.<br>
-          After 4 years of valiant service aboard the USS Smovin, Nikos is departing for a new mission.<br><br>
+          After 3 years of valiant service aboard the USS Smovin, Nikos is departing for a new mission.<br><br>
           This website chronicles his journey.
         </p>
       </UCard>
@@ -81,6 +81,10 @@
         </li>
         <li>2 Cats near office spotted</li>
         <li>Huge amount of coffee jugs drunk</li>
+        <li>Quand il était ado, il ressemblait à Thimothé Chalamet</li>
+        <li>Il a des supers conseils de livre</li>
+        <li>Son père est une sorte de Sheldon Cooper</li>
+        <li>S'il pouvait vivre quelque part en Belgique, ce serait près de la Roche en Ardenne</li>
       </ul>
     </UCard>
   </div>
